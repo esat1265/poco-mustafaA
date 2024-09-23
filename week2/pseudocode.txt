@@ -1,0 +1,71 @@
+Ex.3 - One family wants to get through a tunnel. Dad can make it in 1 minute, mama in 2 minutes, son in 4 and daughter in 5 minutes. Unfortunately, not more than two persons can go through the narrow tunnel at one time, moving at the speed of the slower one.
+Can they all make it to the other side if they have a torch that lasts only 12 minutes and they are afraid of the dark?
+=======================================
+
+    Define the family members and their crossing times
+    SET dad_time = 1
+    SET mama_time = 2
+    SET son_time = 4
+    SET daughter_time = 5
+
+    Initialize total time
+    SET total_time = 0
+
+    Step 1: Dad and Mama cross the tunnel
+    total_time = total_time + mama_time   // Slowest time (Mama)
+    PRINT "Dad and Mama cross. Total time: ", total_time
+
+    Step 2: Dad returns with the torch
+    total_time = total_time + dad_time
+    PRINT "Dad returns. Total time: ", total_time
+
+    Step 3: Son and Daughter cross the tunnel
+    total_time = total_time + daughter_time  // Slowest time (Daughter)
+    PRINT "Son and Daughter cross. Total time: ", total_time
+
+    Step 4: Mama returns with the torch
+    total_time = total_time + mama_time
+    PRINT "Mama returns. Total time: ", total_time
+
+    Step 5: Dad and Mama cross the tunnel again
+    total_time = total_time + mama_time
+    PRINT "Dad and Mama cross again. Total time: ", total_time
+
+    Check if total time is within the limit
+    IF total_time <= 12 THEN
+        PRINT "All family members made it across the tunnel in ", total_time, " minutes."
+    ELSE
+        PRINT "Failed to get everyone across in time."
+    END IF
+
+END
+
+///////////////////////////////////////////////////////////
+
+
+Ex.2 - Allow the user to input digits, afterwards sort and print them in numerical order.
+===================================================
+BEGIN
+
+    Step 1: Initialize an empty list to store the digits
+    DECLARE digitsList AS LIST
+
+    Step 2: Prompt the user for input
+    PRINT "Enter digits separated by spaces: "
+    
+    Step 3: Read the input from the user
+    READ userInput
+    
+    Step 4: Split the input string into individual digits
+    SET digitsList = SPLIT(userInput INTO LIST OF DIGITS)
+
+    Step 5: Sort the list of digits in numerical order
+    SORT digitsList IN ASCENDING ORDER
+
+    Step 6: Print the sorted digits
+    PRINT "Sorted digits in numerical order: "
+    FOR EACH digit IN digitsList DO
+        PRINT digit
+    END FOR
+
+END
