@@ -1,0 +1,24 @@
+Ex. 3.1.5 (*) - Combine
+
+*Combine Ex. 3.1.2 and 3.1.4 into one program.
+ The program should ask the user if they want to add or subtract two numbers. Then the program should ask
+ for the two numbers and print the result.
+
+ // Solution
+
+    DECLARE variable --> number_1 AS Number;
+    DECLARE variable --> number_2 AS Number;
+    DECLARE variable --> operation AS String;
+
+    step-1 PROMPT "Please choose your operation by typinf a letter: Add: A, Subtract: S" AS operation;
+
+    step-2 Check if user choose A or B. If not, ask again for choosing a correct letter for step 1.
+
+
+    step-3 // DRY (Don't Repeat Yourself)
+                       
+        IF operation is A;
+            Execute program call(Ex_3_1_2.txt)
+        ELSE
+            Execute program call(Ex_3_1_4.txt)
+        END

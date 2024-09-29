@@ -1,0 +1,47 @@
+Ex. 3.2.2 
+Write a program that asks the user for a date. Find the day of the year for the given date. For example,
+January 1st would be 1, and December 31st is 365.
+    a- Do not include leap years.
+    b- Include leap years. Check the rules for leap years on the internet, and implement them in your program.
+
+
+// Solution 
+
+    FUNCTION isLeapYear(year):
+        IF (year MOD 4 == 0 AND year MOD 100 != 0) OR (year MOD 400 == 0):
+            RETURN TRUE
+        ELSE:
+            RETURN FALSE
+
+    FUNCTION getDayOfYear(month, day, year):
+        // Days in each month
+        DEFINE daysInMonth AS ARRAY [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+        
+        // Check for leap year
+        IF isLeapYear(year):
+            daysInMonth[1] = 29  // February has 29 days in a leap year
+
+        // Calculate the day of the year
+        dayOfYear = 0
+        FOR i FROM 0 TO month - 1:
+            dayOfYear = dayOfYear + daysInMonth[i]
+        
+        dayOfYear = dayOfYear + day
+        RETURN dayOfYear
+
+    // Main program
+    PROMPT "Enter the date (format: MM/DD/YYYY):"
+    READ inputDate
+    PARSE inputDate INTO month, day, year
+
+    // Validate the date input
+    IF month < 1 OR month > 12 OR day < 1 OR day > 31:
+        PRINT "Invalid date. Please enter a valid date."
+        EXIT
+
+    IF (month == 2 AND day > 29) OR (month IN [4, 6, 9, 11] AND day > 30):
+        PRINT "Invalid date. Please enter a valid date."
+        EXIT
+
+    dayOfYear = getDayOfYear(month, day, year)
+    PRINT "The day of the year is: " + dayOfYear

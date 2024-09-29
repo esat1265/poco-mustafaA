@@ -1,0 +1,25 @@
+* Allow the user to input numbers, add them and print the result.
+
+
+// Solution
+
+AddNumbers
+    DECLARE variable --> number_1 AS Number;
+    DECLARE variable --> number_2 AS Number;
+    INITIALIZE variable --> result = 0;
+
+    step-1 PROMPT "Please input first number" AS number_1;
+    step-2 PROMPT "Please input second number" AS number_2;
+
+    step-3 Check if all the inputs are numbers. If not, ask for the numbers again and return to step 1 or 2.
+
+
+    step-4 // add number_1 and number_2;
+    
+            function add(number_1, number_2)
+             
+               result is adding number_1 and number_2
+               display result
+
+            END
+END 

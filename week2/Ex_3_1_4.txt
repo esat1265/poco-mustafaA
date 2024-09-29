@@ -1,0 +1,31 @@
+Ex. 3.1.4 (*) - Subtract numbers
+
+* Allow the user to input numbers, subtract the smaller from the bigger number and print the result.
+
+// Solution
+
+    DECLARE variable --> number_1 AS Number;
+    DECLARE variable --> number_2 AS Number;
+    INITIALIZE variable --> result = 0;
+
+    step-1 PROMPT "Please input first number" AS number_1;
+    step-2 PROMPT "Please input second number" AS number_2;
+
+    step-3 Check if all the inputs are numbers. If not, ask for the numbers again and return to step 1 or 2.
+
+
+    step-4 // compare and subtract number_1 and number_2;
+    
+            function compare_sub(number_1, number_2)
+             
+                IF number_1 is greater then number_2;
+                    result is number_1 - number_2;
+                    display result
+                ELSE
+                    result is number_2 - number_1;
+                    display result
+
+            END
+
+
+

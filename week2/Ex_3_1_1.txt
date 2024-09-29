@@ -1,0 +1,17 @@
+* Create a program that prompts for your name and prints a greeting using your name.
+
+
+// Solution
+
+    INITIALIZE variable -> userInput AS String;
+
+    PROMPT "Please input your name" AS userInput;
+
+    greeting(userInput)
+
+    function greeting(name)
+        check if there is name or not, if not ask again for exist name;
+        check if some space before or after userInput,remove them;
+        print "Hello, " + userInput;
+    end
+
